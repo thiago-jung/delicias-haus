@@ -2,7 +2,7 @@
 // src/components/sections/Hero.tsx
 // Responsabilidade: Seção hero principal com animação de entrada, badge sazonal e CTAs duplos
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -11,13 +11,17 @@ import { getActiveCollection } from "@/constants/catalog";
 import { SITE_CONFIG } from "@/constants/site-config";
 import Image from "next/image";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: (delay: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
-  }),
+const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 32 },
+    show: (delay: number = 0) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            delay,
+            ease: [0.16, 1, 0.3, 1] as const // O 'as const' resolve o erro de tipagem
+        },
+    }),
 };
 
 const floatingDecor = [
