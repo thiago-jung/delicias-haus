@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* CONECTA O CONFIG DA V3 COM O MOTOR DA V4 */
+@config "../../tailwind.config.ts";
 
 @layer base {
   :root {

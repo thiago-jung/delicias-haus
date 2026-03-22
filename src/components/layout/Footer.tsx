@@ -47,13 +47,13 @@ export function Footer() {
               >
                 <MessageCircle className="h-4 w-4" />
               </a>
-              <a
-                href={`mailto:${SITE_CONFIG.contact.email}`}
-                className="h-9 w-9 rounded-full border border-border-subtle flex items-center justify-center text-foreground-muted hover:text-brand-gold hover:border-brand-gold/30 transition-all"
-                aria-label="Email"
-              >
-                <Mail className="h-4 w-4" />
-              </a>
+              {/*<a*/}
+              {/*  href={`mailto:${SITE_CONFIG.contact.email}`}*/}
+              {/*  className="h-9 w-9 rounded-full border border-border-subtle flex items-center justify-center text-foreground-muted hover:text-brand-gold hover:border-brand-gold/30 transition-all"*/}
+              {/*  aria-label="Email"*/}
+              {/*>*/}
+              {/*  <Mail className="h-4 w-4" />*/}
+              {/*</a>*/}
             </div>
           </div>
 
@@ -89,17 +89,17 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-brand-gold transition-colors"
                 >
-                  WhatsApp: (51) 99999-9999
+                    WhatsApp: (51) 99262-5835
                 </a>
               </li>
-              <li>
-                <a
-                  href={`mailto:${SITE_CONFIG.contact.email}`}
-                  className="hover:text-brand-gold transition-colors"
-                >
-                  {SITE_CONFIG.contact.email}
-                </a>
-              </li>
+              {/*<li>*/}
+              {/*  <a*/}
+              {/*    href={`mailto:${SITE_CONFIG.contact.email}`}*/}
+              {/*    className="hover:text-brand-gold transition-colors"*/}
+              {/*  >*/}
+              {/*    {SITE_CONFIG.contact.email}*/}
+              {/*  </a>*/}
+              {/*</li>*/}
               <li className="text-foreground-muted/60 text-xs leading-relaxed">
                 Atendimento: Seg–Sáb, 9h–18h<br />
                 Encomendas com 7 dias de antecedência

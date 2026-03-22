@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { getActiveCollection } from "@/constants/catalog";
 import { SITE_CONFIG } from "@/constants/site-config";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -19,12 +20,12 @@ const fadeUp = {
   }),
 };
 
-const floatingCookies = [
-  { emoji: "🍪", size: "text-5xl", top: "15%", left: "8%", delay: 0, duration: 5 },
-  { emoji: "🐣", size: "text-4xl", top: "25%", right: "10%", delay: 0.5, duration: 6 },
-  { emoji: "🍯", size: "text-3xl", top: "65%", left: "5%", delay: 1, duration: 7 },
-  { emoji: "🌼", size: "text-3xl", top: "70%", right: "8%", delay: 0.3, duration: 5.5 },
-  { emoji: "✨", size: "text-2xl", top: "45%", left: "3%", delay: 0.7, duration: 4 },
+const floatingDecor = [
+    //{ src: "/products/spritz_ind1.png", size: 120, top: "15%", left: "8%", delay: 0, duration: 5 },
+    { src: "/products/ovo_ind1.png", size: 100, top: "25%", right: "10%", delay: 0.5, duration: 6 },
+    { src: "/products/pata_ind1.png", size: 60, top: "65%", left: "5%", delay: 1, duration: 7 },
+    { src: "/products/cenoura_ind1.png", size: 50, top: "70%", right: "8%", delay: 0.3, duration: 5.5 },
+    { src: "/products/coelho_ind6.png", size: 60, top: "15%", left: "8%", delay: 0.7, duration: 4 },
 ];
 
 export function Hero() {
@@ -38,36 +39,49 @@ export function Hero() {
         <div className="absolute top-1/4 right-1/4 h-[300px] w-[300px] rounded-full bg-brand-caramel/5 blur-[80px]" />
       </div>
 
-      {/* Floating decorative emojis */}
-      {floatingCookies.map((item, i) => (
+    {/* Floating decorative Images */}
+    {floatingDecor.map((item, i) => (
         <motion.div
-          key={i}
-          className={`absolute ${item.size} select-none pointer-events-none hidden lg:block`}
-          style={{
-            top: item.top,
-            left: "left" in item ? item.left : undefined,
-            right: "right" in item ? item.right : undefined,
-          }}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{
-            opacity: [0, 0.6, 0.6],
-            scale: 1,
-            y: [0, -14, 0],
-          }}
-          transition={{
-            opacity: { delay: item.delay + 1, duration: 0.8 },
-            scale: { delay: item.delay + 1, duration: 0.8 },
-            y: {
-              delay: item.delay + 1.5,
-              duration: item.duration,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }}
-        >
-          {item.emoji}
+            key={i}
+            className="absolute select-none pointer-events-none hidden lg:block"
+            style={{
+                top: item.top,
+                left: "left" in item ? item.left : undefined,
+                right: "right" in item ? item.right : undefined,
+            }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{
+                opacity: [0, 0.8, 0.8], // Um pouco mais opaco que os emojis
+                scale: 1,
+                y: [0, -20, 0], // Movimento um pouco mais amplo para fotos
+                rotate: [0, 10, -10, 0], // Adicionada uma leve rotação orgânica
+            }}
+            transition={{
+                opacity: { delay: item.delay + 1, duration: 0.8 },
+                scale: { delay: item.delay + 1, duration: 0.8 },
+                y: {
+                    delay: item.delay + 1.5,
+                    duration: item.duration,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                },
+                rotate: {
+                    delay: item.delay + 1.5,
+                    duration: item.duration * 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }
+            }}
+            >
+            <Image
+                src={item.src}
+                alt="Decoração biscoito"
+                width={item.size}
+                height={item.size}
+                className="drop-shadow-2xl" // Adiciona profundidade às fotos transparentes
+            />
         </motion.div>
-      ))}
+    ))}
 
       {/* Grid pattern overlay */}
       <div

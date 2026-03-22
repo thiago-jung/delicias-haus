@@ -46,15 +46,28 @@ export default function ContatoPage() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    // DECISÃO: Simula envio (integrar com Resend, Nodemailer ou Formspree)
-    // ALTERNATIVA: POST para /api/contact com fetch
-    await new Promise((r) => setTimeout(r, 1500));
-    setIsSubmitting(false);
-    toast.success("Mensagem enviada!", {
-      description: "Entraremos em contato em breve. Obrigada! 🍪",
-    });
-    reset();
+      setIsSubmitting(true);
+
+      try {
+          const response = await fetch("/api/contact", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+          });
+
+          if (!response.ok) throw new Error("Erro no servidor");
+
+          toast.success("Mensagem enviada!", {
+              description: "Recebemos sua encomenda. Entraremos em contato em breve! 🍪",
+          });
+          reset();
+      } catch (error) {
+          toast.error("Erro ao enviar", {
+              description: "Não foi possível enviar sua mensagem agora. Tente pelo WhatsApp!",
+          });
+      } finally {
+          setIsSubmitting(false);
+      }
   };
 
   return (
@@ -221,18 +234,18 @@ export default function ContatoPage() {
                   </div>
                 </a>
 
-                <a
-                  href={`mailto:${SITE_CONFIG.contact.email}`}
-                  className="flex items-center gap-4 group"
-                >
-                  <div className="h-10 w-10 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold/20 transition-all">
-                    <Mail className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-foreground group-hover:text-brand-gold transition-colors">Email</p>
-                    <p className="text-xs text-foreground-muted">{SITE_CONFIG.contact.email}</p>
-                  </div>
-                </a>
+                {/*<a*/}
+                {/*  href={`mailto:${SITE_CONFIG.contact.email}`}*/}
+                {/*  className="flex items-center gap-4 group"*/}
+                {/*>*/}
+                {/*  <div className="h-10 w-10 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold/20 transition-all">*/}
+                {/*    <Mail className="h-5 w-5" />*/}
+                {/*  </div>*/}
+                {/*  <div>*/}
+                {/*    <p className="text-sm font-medium text-foreground group-hover:text-brand-gold transition-colors">Email</p>*/}
+                {/*    <p className="text-xs text-foreground-muted">{SITE_CONFIG.contact.email}</p>*/}
+                {/*  </div>*/}
+                {/*</a>*/}
               </div>
 
               {/* Info box */}

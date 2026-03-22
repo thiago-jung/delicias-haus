@@ -13,7 +13,7 @@ const VALORES = [
   {
     title: "Artesanal de verdade",
     description:
-      "Cada biscoito é feito à mão, do início ao fim. Nenhuma linha de produção, nenhum atalho.",
+      "Cada biscoito é feito à mão, do início ao fim.",
   },
   {
     title: "Ingredientes que respeitamos",
@@ -54,12 +54,12 @@ export default function SobrePage() {
           <div className="mt-10 space-y-6 text-foreground-muted leading-relaxed text-lg">
             <p>
               A Delicias Haus nasceu de uma tradição familiar. As primeiras receitas
-              foram testadas em uma cozinha pequena, com muito tempo e pouco pressa.
+              foram testadas em uma cozinha pequena, com muito tempo e pouca pressa.
               O mel era local, a manteiga era boa, e o resultado era inevitável: biscoitos
               que faziam as pessoas pararem.
             </p>
             <p>
-              Com o tempo, a decoração passou a ser parte igual da experiência. Um biscoito
+              Com o tempo, a decoração passou a ser parte da experiência. Um biscoito
               bem feito merece ser lindo também. Aprendemos que o ato de presentear começa
               antes da primeira mordida — começa na embalagem, no cheiro, no detalhe que
               alguém notou.
@@ -125,7 +125,7 @@ export default function SobrePage() {
               {
                 step: "04",
                 title: "Embalagem e entrega",
-                desc: "Cada peça seca e é embalada com cuidado. A entrega ou retirada é combinada pessoalmente.",
+                desc: "Cada peça seca e é embalada com cuidado. Entregamos na sua casa ou combinamos a retirada.",
               },
             ].map((item, i, arr) => (
               <div key={item.step} className="flex gap-6">

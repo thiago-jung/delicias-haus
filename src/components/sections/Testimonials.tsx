@@ -10,12 +10,12 @@ import { Card } from "@/components/ui/Card";
 const TESTIMONIALS = [
   {
     id: "t1",
-    name: "Ana Claudia M.",
-    role: "Mãe de dois filhos",
+    name: "Thiago J.",
+    role: "Consumidor regular",
     content:
-      "Os biscoitos de Páscoa foram o presente mais elogiado da confraternização! Todo mundo quis saber onde comprei. A decoração é impecável e o sabor é incrível.",
+      "O Spritzgebäck é o melhor, recomendo de olhos fechados!",
     rating: 5,
-    avatar: "A",
+    avatar: "TJ",
   },
   {
     id: "t2",

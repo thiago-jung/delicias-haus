@@ -10,6 +10,8 @@ import { Menu, X, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { NAV_LINKS, SITE_CONFIG } from "@/constants/site-config";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,17 +47,20 @@ export function Navbar() {
         )}
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative">
-              <div className="h-8 w-8 rounded-full bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center transition-all group-hover:bg-brand-gold/30">
-                <span className="text-brand-gold text-xs font-bold">D</span>
-              </div>
-            </div>
-            <span className="font-display text-lg font-semibold tracking-wide text-foreground">
-              Delicias <span className="text-brand-gold">Haus</span>
-            </span>
-          </Link>
+                  {/* Logo */}
+                  <Link href="/" className="flex items-center gap-3 group">
+                      <div className="relative h-10 w-10 shrink-0 overflow-hidden">
+                          <Image
+                              src={SITE_CONFIG.logoSrc}
+                              alt="Logo Delicias Haus"
+                              fill
+                              className="object-contain transition-transform duration-500 group-hover:scale-110"
+                          />
+                      </div>
+                      <span className="font-display text-lg font-semibold tracking-wide text-foreground">
+                          Delicias <span className="text-brand-gold">Haus</span>
+                      </span>
+                  </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">

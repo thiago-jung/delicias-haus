@@ -3,18 +3,24 @@
 
 export const SITE_CONFIG = {
   name: "Delicias Haus",
-  tagline: "Biscoitos decorados feitos com alma",
+    tagline: "Biscoitos decorados feitos com alma",
+    logoSrc: "/images/logo2.svg",
   description:
     "Biscoitos de mel e manteiga artesanais, decorados com precisão e carinho. Cada peça é única — criada para ser o presente perfeito.",
   url: "https://deliciashaus.com.br",
   contact: {
-    whatsapp: "https://wa.me/5551999999999",
-    email: "ola@deliciashaus.com.br",
+    whatsapp: "https://wa.me/5551992625835",
+    email: "thiago.sjung@gmail.com",
     instagram: "https://instagram.com/deliciashaus",
   },
   social: {
     instagram: "@deliciashaus",
-  },
+    },
+    imageSizes: {
+        productCard: "(max-width: 768px) 100vw, 384px",
+        hero: "(max-width: 1024px) 100vw, 50vw",
+        logo: "40px",
+    }
 };
 
 export const NAV_LINKS = [
@@ -26,7 +32,7 @@ export const NAV_LINKS = [
 
 export const STATS = [
   { value: "500+", label: "clientes felizes" },
-  { value: "12", label: "anos de prática" },
+  { value: "20", label: "anos de prática" },
   { value: "100%", label: "artesanal" },
   { value: "0", label: "corantes artificiais" },
 ];
