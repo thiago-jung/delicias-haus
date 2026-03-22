@@ -3,12 +3,24 @@
 
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond } from "next/font/google";
-import { GeistSans } from "geist/font/sans";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SITE_CONFIG } from "@/constants/site-config";
 import { Toaster } from "sonner";
+
+// Configuração da Geist Sans
+const geistSans = Geist({
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+});
+
+// Configuração da Geist Mono (opcional, útil para código)
+const geistMono = Geist_Mono({
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -58,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${GeistSans.variable} ${playfair.variable} ${cormorant.variable} dark`}
+          className={`${geistSans.variable} ${playfair.variable} ${cormorant.variable} dark`}
     >
       <body className="grain-overlay bg-background text-foreground antialiased selection:bg-brand-gold/25">
         <Navbar />
