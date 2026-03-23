@@ -36,7 +36,7 @@ export const COLLECTIONS: Collection[] = [
     color: "#C9A84C",
     products: [
       {
-        id: "p-coelho-mel",
+        id: "coelho-mel",
         name: "Coelho Sentado",
         description: "Biscoito de mel artesanal decorado à mão com glacê real de múltiplas camadas.",
         price: 4.50,
@@ -46,17 +46,17 @@ export const COLLECTIONS: Collection[] = [
         highlight: true,
       },
       {
-        id: "p-ovo-manteiga",
+        id: "saquinho-manteiga",
         name: "Saquinho com 5 Biscoitos de Mel Decorados",
         description: "Biscoitos artesanais, crocantes e feitos com muito carinho para deixar a Páscoa ainda mais doce!",
         price: 15.00,
         unit: "kit c/ 5",
         image: "/products/saco5.png",
-        tags: ["Manteiga", "Páscoa"],
+          tags: ["Mel", "Páscoa"],
         highlight: true,
       },
       {
-        id: "p-bundinha-coelho",
+        id: "bundinha-coelho",
         name: "Bundinha do Coelho",
         description: "Biscoito individual clássico de toda Páscoa.",
         price: 6.00,
@@ -66,17 +66,17 @@ export const COLLECTIONS: Collection[] = [
         highlight: false,
       },
       {
-        id: "p-abanando",
+        id: "abanando",
         name: "Coelhinho Abanando",
         description: "Delicioso e fofinho, perfeito para adoçar o seu dia.",
         price: 4.50,
         unit: "unidade",
         image: "/products/coelho_ind11.png",
-        tags: ["Manteiga", "Decorado"],
+        tags: ["Mel", "Decorado"],
           highlight: false,
       },
       {
-        id: "p-coelho-fofo",
+        id: "coelho-fofo",
         name: "Coelho Fofo",
         description: "Formato icônico de páscoa com massa de mel e glacê real.",
         price: 6.00,
@@ -86,7 +86,7 @@ export const COLLECTIONS: Collection[] = [
         highlight: false,
       },
       {
-        id: "p-cenoura",
+        id: "cenoura",
         name: "Cenoura",
         description: "A clássica cenoura do coelhinho de páscoa que não pode faltar.",
         price: 6.00,
@@ -96,7 +96,7 @@ export const COLLECTIONS: Collection[] = [
         highlight: false,
         },
         {
-            id: "p-spekulatius",
+            id: "spekulatius",
             name: "Spekulatius",
             description: "Biscoito típico alemão, crocante e fininho feito de especiarias.",
             price: 7.00,
@@ -106,7 +106,7 @@ export const COLLECTIONS: Collection[] = [
             highlight: true,
         },
         {
-            id: "p-spritzgeback",
+            id: "spritzgeback",
             name: "Spritzgebäck",
             description: "Biscoito típico alemão, ponta coberta de chocolate.",
             price: 16.00,
@@ -127,7 +127,7 @@ export const COLLECTIONS: Collection[] = [
     color: "#8B5E3C",
       products: [
           {
-              id: "p-spekulatius",
+              id: "spekulatius",
               name: "Spekulatius",
               description: "Biscoito típico alemão, crocante e fininho feito de especiarias.",
               price: 7.00,
@@ -137,7 +137,7 @@ export const COLLECTIONS: Collection[] = [
               highlight: true,
           },
           {
-              id: "p-spritzgeback",
+              id: "spritzgeback",
               name: "Spritzgebäck",
               description: "Biscoito típico alemão, ponta coberta de chocolate.",
               price: 16.00,
